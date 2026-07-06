@@ -1,0 +1,19 @@
+//user.findByPk(x) = select * from users where id = x  Primary Key
+//user.findAll({where {name = 'pepe'}}) = select * from users where name = 'pepe'
+//user.findOne({where {email = 'algogmail'}}) = select * from users where email = 'algoemail'    Campo UNIQUE
+
+//Se usa findOne en lugar de findAll porque findOne devuelve un objeto {} y findAll una lista de objetos con uno solo [{}]
+//user.hasMany(tasks) Mx1
+//task.belongsTo(user) 1x1
+//user.belongsToMany(tools) NxM
+//user.hasMany(Tool, {as: "instrument"});   Inner Join en lugar de Tool lo llamo Instrument
+
+//a(include[{model b, include c}])
+//User.belongsToMany(Profile, { through: 'User_Profiles' });
+
+//Tsabla intermedia
+/* 
+const User_Profile = sequelize.define('User_Profile', {}, { timestamps: false });
+User.belongsToMany(Profile, { through: User_Profile });
+Profile.belongsToMany(User, { through: User_Profile });
+*/
